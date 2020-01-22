@@ -31,6 +31,20 @@ export const ApiHelper = {
         let path = URL + FILMS + GET_ALL;
         return axios.get(path);
     },
+    getFilm: async (id) => {
+        let path = URL + FILMS + GET + id;
+        return axios.get(path);
+    },
+
+    updateFilm: async (body, id) => {
+        let path = URL + FILMS + UPDATE + id;
+        return axios.put(path, body);
+    },
+
+    addFilm: async (body) => {
+        let path = URL + FILMS + CREATE;
+        return axios.post(path, body);
+    },
 
     getCopies: async () => {
         let path = URL + COPIES + GET_ALL;

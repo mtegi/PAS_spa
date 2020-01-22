@@ -94,7 +94,7 @@ class FilmList extends Component {
             return Error();
         }
         return <Container className="grayBorder bg-items-color m1rem p_d" style={{height:"100%"}}>
-            <Row className="m-2"><Link to={"/films/add"}><Button>New Film</Button></Link></Row>
+            <Row className="m-2"><Link to="/films/add"><Button>New Film</Button></Link></Row>
             {this.getBody()}
         </Container>
     }

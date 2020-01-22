@@ -16,7 +16,7 @@ import FilmList from "./FilmList";
 import CopiesList from "./CopiesList";
 import FilmCopyList from "./FilmCopyList";
 import AddBook from "./editors/AddBook";
-
+import AddFilm from "./editors/AddFilm";
 const history = createBrowserHistory();
 
 class Home extends Component {
@@ -25,6 +25,10 @@ class Home extends Component {
         this.state ={
             history:history
         }
+    }
+
+    componentDidMount() {
+        this.state.history.push('/books');
     }
 
     render() {
@@ -41,9 +45,11 @@ class Home extends Component {
                         <Route exact path='/books'><BookList/></Route>
                         <Route exact path="/books/add" component={AddBook}/>
                         <Route exact path="/books/edit/:id" render={(routing) => <AddBook match={routing.match} history={routing.history} modify={true}/>}/>
-                        <Route path='/films'><FilmList/></Route>
-                        <Route path='/copies'><CopiesList/></Route>
-                        <Route path='/film-copies'><FilmCopyList/></Route>
+                        <Route exact path='/films'><FilmList/></Route>
+                        <Route exact path="/films/add" component={AddFilm}/>
+                        <Route exact path="/films/edit/:id" render={(routing) => <AddFilm match={routing.match} history={routing.history} modify={true}/>}/>
+                        <Route exact path='/copies'><CopiesList/></Route>
+                        <Route exact path='/film-copies'><FilmCopyList/></Route>
                         <Route path='*' exact={true} component={Handle404} />
                     </Switch>
                 </Container>
