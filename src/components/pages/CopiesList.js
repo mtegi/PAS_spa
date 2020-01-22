@@ -102,7 +102,7 @@ class CopiesList extends Component {
             return Error();
         }
         return <Container className="grayBorder bg-items-color m1rem p_d" style={{height:"100%"}}>
-            <Row className="m-2"><Link to={"/films/add"}><Button>New Copy</Button></Link></Row>
+            <Row className="m-2"><Link to={"/copies/add"}><Button>New Copy</Button></Link></Row>
             {this.getBody()}
         </Container>
     }
