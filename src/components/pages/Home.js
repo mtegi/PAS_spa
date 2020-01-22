@@ -18,6 +18,7 @@ import FilmCopyList from "./FilmCopyList";
 import AddBook from "./editors/AddBook";
 import AddFilm from "./editors/AddFilm";
 import AddCopy from "./editors/AddCopy";
+import AddFilmCopy from "./editors/AddFilmCopy";
 const history = createBrowserHistory();
 
 class Home extends Component {
@@ -53,6 +54,8 @@ class Home extends Component {
                         <Route exact path="/copies/add" component={AddCopy}/>
                         <Route exact path="/copies/edit/:id" render={(routing) => <AddCopy match={routing.match} history={routing.history} modify={true}/>}/>
                         <Route exact path='/film-copies'><FilmCopyList/></Route>
+                        <Route exact path='/film-copies/add' component={AddFilmCopy}/>
+                        <Route exact path="/film-copies/edit/:id" render={(routing) => <AddFilmCopy match={routing.match} history={routing.history} modify={true}/>}/>
                         <Route path='*' exact={true} component={Handle404} />
                     </Switch>
                 </Container>
