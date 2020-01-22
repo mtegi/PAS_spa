@@ -24,14 +24,19 @@ class AddCopy extends Component {
     handleSubmit = async() => {
         //todo: submit
         this.setState({loading:true});
-        let author = {
-            lastname: this.state.lastName
-        };
+        let chosenType;
+        if(this.state.isPaperBook)
+            chosenType = 'PAPERBOOK';
+        else
+            chosenType = 'AUDIOBOOK';
+
         let body = {
             bookId: this.state.bookId,
-            author: author,
-            title: this.state.title
+            copyType: chosenType,
+            time: this.state.time,
+            pages: this.state.pages
         };
+        
         if(this.props.modify){
             await ApiHelper.updateCopy(body, this.props.match.params.id).then(() => {
                 this.props.history.push('/copies')
