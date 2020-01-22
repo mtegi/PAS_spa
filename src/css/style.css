@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+html, body, #app, #app>div {
+    height: 91.7vh;
+    font-family: 'PT Sans', sans-serif;
+
+}
+body{
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 51s ease infinite;
+    -moz-animation: AnimationName 51s ease infinite;
+    animation: AnimationName 51s ease infinite;
+    background: linear-gradient(318deg, #6cc0f0, #1b89f3, #b3e2f3);
+    min-height: 100%;
+}
+
+body > div{
+    height: 100%;
+    min-height: 100%;
+}
+
+.bg-items-color{
+    background-color: ghostwhite;
+}
+
+.bg-table{
+    background-color: white;
+}
+
+.top-menu{
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.panda > div > svg{
+    height: 2rem;
+    width: 2rem;
+}
+.icon-menu > div > svg{
+    height: 0.5rem;
+    width: 1.5rem;
+}
+
+.icon > div > svg{
+     height: 1rem;
+     width: 1.5rem;
+ }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+
+.divider {
+    width: 100%;
+    border: 0.3rem solid slategray;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.grayBorder{
+    border-style:solid;
+    border-width:0.3rem;
+    border-color:LightGray;
+    border-radius:1rem;
+}
+
+.welcome{
+    font-size:large;
+    font-weight: bold;
+}
+
+.noTests{
+    justify-content: center;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    font-size: x-large;
+}
+
+.m1rem{
+    margin-top: 1rem;
+}
+
+.p_d{
+    padding: 0.8rem;
+}
