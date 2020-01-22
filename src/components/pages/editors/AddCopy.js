@@ -22,7 +22,6 @@ class AddCopy extends Component {
     }
 
     handleSubmit = async() => {
-        //todo: submit
         this.setState({loading:true});
         let chosenType;
         if(this.state.isPaperBook)
@@ -36,7 +35,7 @@ class AddCopy extends Component {
             time: this.state.time,
             pages: this.state.pages
         };
-        
+
         if(this.props.modify){
             await ApiHelper.updateCopy(body, this.props.match.params.id).then(() => {
                 this.props.history.push('/copies')
@@ -73,11 +72,25 @@ class AddCopy extends Component {
     componentDidMount = async() => {
         if(this.props.modify){
             let response = await ApiHelper.getCopy(this.props.match.params.id);
-            this.setState({
-                firstName:response.data.author.firstName,
-                lastName:response.data.author.lastName,
-                title:response.data.title
-            })
+            console.log(response);
+            if(response.data.bookType.hasOwnProperty("pages"))
+              this.setState({
+                  length:null,
+                  isPaperBook:true,
+                  pages:response.data.bookType.pages,
+                  time:'',
+                  bookId:response.data.entity.id
+        })
+
+            if(response.data.bookType.hasOwnProperty("duration"))
+                this.setState({
+                    length:response.data.bookType.duration,
+                    isPaperBook:false,
+                    pages:0,
+                    time:response.data.bookType.durationString,
+                    bookId:response.data.entity.id
+                })
+
         }
         this.setState({loading:false})
     };
