@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = 'http://localhost:8080/SpringMVC_war_exploded/rest';
+const URL = 'https://localhost:8443/TKS_web_app_war/rest';
 const GET_ALL ='/get';
 const GET ='/get/';
 const DELETE = '/delete/';
@@ -95,6 +95,22 @@ export const ApiHelper = {
         let path = URL + COPIES + DELETE + id;
         return axios.delete(path);
     },
+
+    updateFilmCopy: async (body, id) => {
+        let path = URL + FILM_COPIES + UPDATE + id;
+        return axios.put(path, body);
+    },
+
+    addFilmCopy: async (body) => {
+        let path = URL + FILM_COPIES + CREATE;
+        return axios.post(path, body);
+    },
+
+    getFilmCopy: async (id) => {
+        let path = URL + FILM_COPIES + GET + id;
+        return axios.get(path);
+    },
+
 
 };
 export default ApiHelper;

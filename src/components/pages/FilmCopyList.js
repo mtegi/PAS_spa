@@ -26,7 +26,7 @@ class FilmCopyList extends Component {
             },{
                 id: 'author',
                 Header: 'Author',
-                accessor: d => d.entity.director.firstName +' '+ d.entity.director.lastName
+                accessor: d => d.entity.author.firstName +' '+ d.entity.author.lastName
             },{
                 id: 'action',
                 Header: 'Menu',

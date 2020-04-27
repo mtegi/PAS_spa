@@ -16,13 +16,18 @@ class FilmList extends Component {
             error:null,
             loading:true,
             films: [],
-            columns: [{
+            columns: [
+                {
+                    id: 'id',
+                    Header: 'Id',
+                    accessor: d => d.id
+                }, {
                 Header: 'Title',
                 accessor: 'title'
             }, {
                 id: 'author',
                 Header: 'Author',
-                accessor: d => d.director.firstName +' '+ d.director.lastName
+                accessor: d => d.author.firstName +' '+ d.author.lastName
             },{
                 id: 'release',
                 Header: 'Release Date',

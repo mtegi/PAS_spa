@@ -17,6 +17,10 @@ class BookList extends Component {
             loading:true,
             books: [],
             columns: [{
+                id: 'id',
+                Header: 'Id',
+                accessor: d => d.id
+            }, {
                 Header: 'Title',
                 accessor: 'title'
             }, {

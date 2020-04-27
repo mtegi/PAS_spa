@@ -30,11 +30,11 @@ class CopiesList extends Component {
             },{
                 id: 'type',
                 Header: 'Type',
-                accessor: d => d.bookType.hasOwnProperty('pages') ? 'Paper' : 'AudioBook'
+                accessor: d => d.bookTypeRestEnt.hasOwnProperty('pages') ? 'Paper' : 'AudioBook'
             },{
                 id: 'length',
                 Header: 'Length',
-                accessor: d => d.bookType.hasOwnProperty('pages') ? d.bookType.pages : d.bookType.durationString
+                accessor: d => d.bookTypeRestEnt.hasOwnProperty('pages') ? d.bookTypeRestEnt.pages : d.bookTypeRestEnt.durationString
             },{
                 id: 'action',
                 Header: 'Menu',
